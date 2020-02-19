@@ -1,0 +1,14 @@
+import cv2
+import numpy as np
+
+
+img = cv2.imread('test.png',0)
+
+kernel = np.ones((11, 11), np.uint8)
+result = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+
+cv2.imshow("Source", img)
+cv2.imshow("Result", result)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
